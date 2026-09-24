@@ -1,0 +1,20 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f5f6f8;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Visible keyboard focus outline for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
+}

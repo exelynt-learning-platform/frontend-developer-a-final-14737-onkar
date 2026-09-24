@@ -1,0 +1,54 @@
+/* Responsive employee table: a normal table on tablet/desktop, and a
+   stacked "card" layout on narrow phones so nothing overflows the page. */
+.employee-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .employee-table thead {
+    display: none;
+  }
+  .employee-table,
+  .employee-table tbody,
+  .employee-table tr,
+  .employee-table td {
+    display: block;
+    width: 100%;
+  }
+  .employee-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .employee-table td {
+    text-align: right;
+    padding-left: 45%;
+    position: relative;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .employee-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    width: 40%;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .employee-table td.employee-actions {
+    text-align: center;
+    padding-left: 0.75rem;
+  }
+  .employee-table td.employee-actions::before {
+    content: none;
+  }
+}
